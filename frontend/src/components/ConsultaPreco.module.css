@@ -1,0 +1,87 @@
+/* card principal */
+.container {
+  width: 100%;
+  max-width: 650px;
+  background: #18181b;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* título */
+.title {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+/* formulário */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.badge-promo {
+  display: inline-block;
+  background-color: #ca6019;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 2rem;
+  margin-top: 0.8rem;
+  margin-bottom: 8px;
+}
+
+.btn-opcao {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #333;
+  background-color: #1a1a1a;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-opcao:hover {
+  border-color: #00ff88;
+}
+
+/* Quando o botão está selecionado */
+.btn-opcao.active {
+  background-color: #00ff88;
+  color: #000;
+  border-color: #00ff88;
+  font-weight: bold;
+}
+
+.tipo-cliente-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* resultado */
+.result {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 20px;
+  background: #111;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* cashback destaque */
+.cashback {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.cashback {
+  margin: 5px 0 0 0;
+  font-size: 1.2rem;
+}

@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8000";
+const API_URL = "https://desafio-cashback-api.onrender.com";
 
 export async function calcularCashback(dados: {
   valor_compra: number;

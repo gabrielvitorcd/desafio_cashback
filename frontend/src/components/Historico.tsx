@@ -28,7 +28,6 @@ export function Historico({ dados }: HistoricoProps) {
 
   return (
     <div className={styles.history}>
-      <h2>Histórico</h2>
       <div className={styles.historyList}>
         {dados.map((item) => (
           <div key={item.id} className={styles.historyItem}>

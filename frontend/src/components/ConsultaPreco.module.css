@@ -85,3 +85,34 @@
   margin: 5px 0 0 0;
   font-size: 1.2rem;
 }
+
+.toggle-historico {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.toggle-historico:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.seta {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-size: 0.75rem;
+}
+
+.seta-aberta {
+  transform: rotate(180deg);
+}

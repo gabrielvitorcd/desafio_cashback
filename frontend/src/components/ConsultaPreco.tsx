@@ -2,10 +2,13 @@ import { useCashback } from "../hooks/useCashback";
 import { Historico } from "./Historico";
 
 import styles from "./ConsultaPreco.module.css";
+import { useState } from "react";
 
 export function ConsultaPreco() {
   const { form, atualizarForm, resultado, historico, loading, erro, calcular } =
     useCashback();
+
+  const [mostrarHistorico, setMostrarHistorico] = useState(false);
 
   return (
     <div className={styles.container}>
@@ -66,7 +69,19 @@ export function ConsultaPreco() {
       )}
 
       {/* Histórico */}
-      <Historico dados={historico || []} />
+      <button
+        className={styles["toggle-historico"]}
+        onClick={() => setMostrarHistorico((prev) => !prev)}
+      >
+        Histórico de consultas
+        <span
+          className={`${styles.seta} ${mostrarHistorico ? styles["seta-aberta"] : ""}`}
+        >
+          ▼
+        </span>
+      </button>
+
+      {mostrarHistorico && <Historico dados={historico || []} />}
     </div>
   );
 }

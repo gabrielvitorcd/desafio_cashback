@@ -8,7 +8,7 @@
 Este projeto foi desenvolvido como resolução de um **Desafio Técnico**. Trata-se de um sistema financeiro (Fullstack) que simula o cálculo e o registro de _cashbacks_ para clientes de uma Fintech, aplicando diferentes regras de negócio com base no perfil do usuário e valor da compra.
 
 <p align="center">
-  <img src="https://via.placeholder.com/800x400/18181b/00ff5e?text=Insira+o+Print+do+Projeto+Aqui" width="100%" alt="Print da Tela Inicial">
+  <img src="docs/images/preview_screenshot.png" width="100%" alt="Print da Tela Inicial">
 </p>
 
 ## ✨ Funcionalidades

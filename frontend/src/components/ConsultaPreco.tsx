@@ -34,7 +34,7 @@ export function ConsultaPreco() {
         <div className={styles["tipo-cliente-group"]}>
           <button
             type="button"
-            className={`${styles["btn-opcao"]} ${form.tipoCliente === "Normal" ? "active" : ""}`}
+            className={`${styles["btn-opcao"]} ${form.tipoCliente === "Normal" ? styles.active : ""}`}
             onClick={() => atualizarForm("tipoCliente", "Normal")}
           >
             Cliente Normal
@@ -42,7 +42,7 @@ export function ConsultaPreco() {
 
           <button
             type="button"
-            className={`${styles["btn-opcao"]} ${form.tipoCliente === "Vip" ? "active" : ""}`}
+            className={`${styles["btn-opcao"]} ${form.tipoCliente === "Vip" ? styles.active : ""}`}
             onClick={() => atualizarForm("tipoCliente", "Vip")}
           >
             Cliente VIP

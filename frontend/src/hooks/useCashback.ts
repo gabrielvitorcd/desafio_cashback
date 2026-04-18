@@ -29,16 +29,18 @@ export function useCashback() {
   const [resultado, setResultado] = useState<ResultadoCashback | null>(null);
   const [historico, setHistorico] = useState<ResultadoCashback[]>([]);
   const [loading, setLoading] = useState(false);
+  const [loadingHistorico, setLoadingHistorico] = useState(false);
   const [erro, setErro] = useState<string | null>(null);
 
   const carregarHistorico = useCallback(async () => {
+    setLoadingHistorico(true);
     try {
       const data = await getHistorico();
-      // console.log(data);
-
       setHistorico(data);
     } catch {
       setErro("Erro ao carregar histórico.");
+    } finally {
+      setLoadingHistorico(false);
     }
   }, []);
 
@@ -94,6 +96,7 @@ export function useCashback() {
     resultado,
     historico,
     loading,
+    loadingHistorico,
     erro,
     calcular,
   };

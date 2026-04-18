@@ -9,12 +9,11 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# ← adiciona esse bloco
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://desafio-cashback-pied.vercel.app",],
+    allow_origins=["https://desafio-cashback-pied.vercel.app"],
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
 

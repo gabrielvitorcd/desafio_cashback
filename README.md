@@ -44,10 +44,52 @@ A lógica central da calculadora obedece aos seguintes critérios:
 - FastAPI (Rotas, Validação de Schemas com Pydantic)
 - Supabase / PostgreSQL (Banco de Dados em Nuvem)
 
-## 🏗️ Estrutura e Arquitetura do Frontend
+## 🔌 Endpoints da API
 
-O projeto foi refatorado focando em **Clean Code** e separação de responsabilidades:
+Base URL: `https://desafio-cashback-api.onrender.com`
 
-- **`useCashback.ts`**: Hook customizado que isola toda a regra de estado (`useState`), validações e chamadas à API (`fetch`).
-- **`ConsultaPreco.tsx`**: Componente principal que gerencia o formulário de entrada.
-- **`Historico.tsx`**: Componente isolado (com CSS Module próprio) responsável por renderizar e formatar a lista de transações recentes.
+| Método | Rota | Descrição |
+|---|---|---|
+| `GET` | `/` | Health check |
+| `POST` | `/cashback/` | Calcula cashback e persiste no banco |
+| `GET` | `/cashback/historico` | Retorna histórico de consultas |
+
+## 🏗️ Arquitetura do Frontend
+
+O projeto foi estruturado em camadas com separação de responsabilidades:
+
+- **`api.ts`** — Service layer: isola todas as chamadas HTTP
+- **`useCashback.ts`** — Hook customizado: gerencia estado, validações e orquestra chamadas ao service
+- **`ConsultaPreco.tsx`** — Componente principal: formulário e renderização de resultados
+- **`Historico.tsx`** — Componente isolado com CSS Module próprio: renderiza e formata o histórico de transações
+
+## 🚀 Como rodar localmente
+
+### Backend
+
+```bash
+cd backend
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env  # preencher com suas credenciais Supabase
+uvicorn app.main:app --reload
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+## ⚠️ Limitações Conhecidas
+
+### Cold start no Render
+
+A API está hospedada no plano gratuito do Render, que hiberna após 15 minutos de inatividade. A primeira requisição pode levar até 30 segundos para responder.
+
+### Histórico compartilhado em redes com CGNAT
+
+O histórico é isolado por IP público. Operadoras móveis e alguns provedores residenciais utilizam CGNAT, compartilhando um único IP entre vários usuários.

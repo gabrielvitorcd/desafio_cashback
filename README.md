@@ -7,6 +7,8 @@
 
 Este projeto foi desenvolvido como resolução de um **Desafio Técnico**. Trata-se de um sistema financeiro (Fullstack) que simula o cálculo e o registro de _cashbacks_ para clientes de uma Fintech, aplicando diferentes regras de negócio com base no perfil do usuário e valor da compra.
 
+**[Acessar projeto em produção](https://desafio-cashback-pied.vercel.app/)**
+
 <p align="center">
   <img src="docs/images/preview_screenshot.png" width="100%" alt="Print da Tela Inicial">
 </p>

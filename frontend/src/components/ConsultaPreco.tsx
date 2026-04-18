@@ -5,8 +5,16 @@ import styles from "./ConsultaPreco.module.css";
 import { useState } from "react";
 
 export function ConsultaPreco() {
-  const { form, atualizarForm, resultado, historico, loading, erro, calcular } =
-    useCashback();
+  const {
+    form,
+    atualizarForm,
+    resultado,
+    historico,
+    loading,
+    loadingHistorico,
+    erro,
+    calcular,
+  } = useCashback();
 
   const [mostrarHistorico, setMostrarHistorico] = useState(false);
 
@@ -81,7 +89,14 @@ export function ConsultaPreco() {
         </span>
       </button>
 
-      {mostrarHistorico && <Historico dados={historico || []} />}
+      {mostrarHistorico &&
+        (loadingHistorico ? (
+          <div className={styles.loadingHistorico}>
+            <span className={styles.spinner} /> Carregando histórico...
+          </div>
+        ) : (
+          <Historico dados={historico} />
+        ))}
     </div>
   );
 }

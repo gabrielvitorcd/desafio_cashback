@@ -116,3 +116,27 @@
 .seta-aberta {
   transform: rotate(180deg);
 }
+
+.loadingHistorico {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ccc;
+  border-top-color: #6c63ff; /* sua cor primária */
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
